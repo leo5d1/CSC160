@@ -12,8 +12,6 @@ namespace TicTacToe
 
             int turn = 0;
             int totalTurns = 0;
-            bool wasATie = false;
-
 
             bool quit = false;
             do
@@ -23,10 +21,18 @@ namespace TicTacToe
                 {
                     for (int col = 0; col < board.GetLength(1); col++)
                     {
-                        Console.WriteLine(" {0} ", board[row, col]);
-                        Console.WriteLine("|");
+                        Console.Write(" {0} ", board[row, col]);
+                        if (col < board.GetLength(1) - 1)
+                        {
+                            Console.Write("|");
+                        }
                     }
-                    Console.WriteLine("--------");
+                    Console.WriteLine();
+                    if (row < board.GetLength(1) - 1)
+                    {
+                        Console.WriteLine("--------");
+                    }
+                    
                 }
 
                 int chosenRow, chosenCol;
@@ -42,35 +48,91 @@ namespace TicTacToe
                     if (validRow && validCol)
                     {
                         validInput = true;
+                    }
+
+                    if (pNames[turn] == "Player 1")
+                    {
+                        totalTurns++;
                         turn++;
+                    }
+                    else
+                    {
+                        totalTurns++;
+                        turn--;
                     }
 
                 } while (!validInput);
 
-                // set board sspot as owned by player
-                //
-                //if (CheckForWinner(board, pSymbols))
-                //{
-                //    break;
-                //}
+                // set board spot as owned by player
+                board[chosenRow - 1, chosenCol - 1] = pSymbols[turn];
+
+                // check for winner
+                if (CheckForWinner(board, pSymbols[turn]))
+                {
+                    break;
+                }
+                // check for tie
+                if (totalTurns == 9)
+                {
+                    break;
+                }
 
             } while (!quit);
 
-            //if tie tell them
-            //else tell them who won
-
-        }
-
-        static bool CheckForWinner(char[,] board, char pSymbols)
-        {
+            Console.WriteLine();
             for (int row = 0; row < board.GetLength(0); row++)
             {
                 for (int col = 0; col < board.GetLength(1); col++)
                 {
-                    int symbolsInRow = 0;
-                    if (board[row, col] == pSymbols)
+                    Console.Write(" {0}  ", board[row, col]);
+                    if (col < board.GetLength(1) - 1)
+                    {
+                        Console.Write("|");
+                    }
+                }
+                Console.WriteLine();
+                if (row < board.GetLength(1) - 1)
+                {
+                    Console.WriteLine("--------");
+                }
+            }
+
+            // End of Game
+            if (totalTurns == 9)
+            {
+                Console.WriteLine("Game Over.");
+                Console.WriteLine("You Tied!");
+            }
+            else
+            {
+                if (turn == 0)
+                {
+                    Console.WriteLine("{0} has won!", pNames[1]);
+                }
+                else
+                {
+                    Console.WriteLine("{0} has won!", pNames[0]);
+                }    
+            }
+            
+
+        }
+
+        static bool CheckForWinner(char[,] board, char pSymbol)
+        {
+            
+            for (int row = 0; row < board.GetLength(0); row++)
+            {
+                int symbolsInRow = 0;
+                for (int col = 0; col < board.GetLength(1); col++)
+                {
+                    if (board[row, col] == pSymbol)
                     {
                         symbolsInRow++;
+                        if (symbolsInRow == 3)
+                        {
+                            return true;
+                        }
                     }
                     else
                     {
@@ -78,8 +140,6 @@ namespace TicTacToe
                     }
                 }
             }
-
-
 
 
             return false;
