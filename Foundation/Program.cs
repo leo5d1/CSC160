@@ -18,7 +18,9 @@ namespace Foundation
             //DataTypes.Execute();
             //Converting.DoIt();
             //ValueReference.Engage();
-            Parameters.DoIt();
+            //Parameters.DoIt();
+            //Strings.Start();
+            Arrays.Commence();
         }
     }
 }

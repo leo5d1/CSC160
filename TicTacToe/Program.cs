@@ -13,6 +13,11 @@ namespace TicTacToe
             int turn = 0;
             int totalTurns = 0;
 
+            int chosenRow, chosenCol;
+            bool rowInput = false, colInput = false;
+            bool validRow, validCol;
+            bool validInput = false;
+
             bool quit = false;
             do
             {
@@ -35,17 +40,39 @@ namespace TicTacToe
                     
                 }
 
-                int chosenRow, chosenCol;
-                bool validInput = false;
                 do
                 {
-                    Console.WriteLine("{0} enter row (1-3)", pNames[turn]);
-                    bool validRow = int.TryParse(Console.ReadLine(), out chosenRow);
+                    do
+                    {
+                        Console.WriteLine("{0} Enter Row (1-3): ", pNames[turn]);
+                        validRow = int.TryParse(Console.ReadLine(), out chosenRow);
 
-                    Console.WriteLine("{0} enter column (1-3)", pNames[turn]);
-                    bool validCol = int.TryParse(Console.ReadLine(), out chosenCol);
+                        if (chosenRow <= 3 && chosenRow >= 1)
+                        {
+                            rowInput = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Row. Try again.");
+                        }
+                    } while (!rowInput);
 
-                    if (validRow && validCol)
+                    do
+                    {
+                        Console.WriteLine("{0} enter column (1-3)", pNames[turn]);
+                        validCol = int.TryParse(Console.ReadLine(), out chosenCol);
+
+                        if (chosenCol <= 3 && chosenCol >= 1)
+                        {
+                            colInput = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Column. Try again.");
+                        }
+                    } while (!colInput);
+
+                    if (rowInput && colInput)
                     {
                         validInput = true;
                     }
@@ -84,7 +111,7 @@ namespace TicTacToe
             {
                 for (int col = 0; col < board.GetLength(1); col++)
                 {
-                    Console.Write(" {0}  ", board[row, col]);
+                    Console.Write(" {0} ", board[row, col]);
                     if (col < board.GetLength(1) - 1)
                     {
                         Console.Write("|");
@@ -120,7 +147,7 @@ namespace TicTacToe
 
         static bool CheckForWinner(char[,] board, char pSymbol)
         {
-            
+            // check for 3 in row
             for (int row = 0; row < board.GetLength(0); row++)
             {
                 int symbolsInRow = 0;
@@ -137,6 +164,65 @@ namespace TicTacToe
                     else
                     {
                         symbolsInRow = 0;
+                    }
+                }
+            }
+
+            // check for 3 in column
+            for (int col = 0; col < board.GetLength(1); col++)
+            {
+                int symbolsInCol = 0;
+                for (int row = 0; row < board.GetLength(0); row++)
+                {
+                    if (board[row, col] == pSymbol)
+                    {
+                        symbolsInCol++;
+                        if (symbolsInCol == 3)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        symbolsInCol = 0;
+                    }
+                }
+            }
+
+            // check for 3 in left to right diagonall
+            int ltrWin = 0;
+            if (board[0,0] == pSymbol)
+            {
+                ltrWin++;
+                if (board[1, 1] == pSymbol)
+                {
+                    ltrWin++;
+                    if (board[2, 2] == pSymbol)
+                    {
+                        ltrWin++;
+                        if (ltrWin == 3)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            // check for 3 in right to left diagonall
+            int rtlWin = 0;
+            if (board[0, 2] == pSymbol)
+            {
+                rtlWin++;
+                if (board[1, 1] == pSymbol)
+                {
+                    rtlWin++;
+                    if (board[2, 0] == pSymbol)
+                    {
+                        rtlWin++;
+                        if (rtlWin == 3)
+                        {
+                            return true;
+                        }
                     }
                 }
             }
