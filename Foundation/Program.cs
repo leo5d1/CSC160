@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleLibrary;
 
 namespace Foundation
 {
@@ -20,7 +21,8 @@ namespace Foundation
             //ValueReference.Engage();
             //Parameters.DoIt();
             //Strings.Start();
-            Arrays.Commence();
+            //Arrays.Commence();
+            //Classes.Execute();
         }
     }
 }
