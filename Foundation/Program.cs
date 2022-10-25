@@ -23,6 +23,7 @@ namespace Foundation
             //Strings.Start();
             //Arrays.Commence();
             //Classes.Execute();
+            Inheritance.Execute();
         }
     }
 }
