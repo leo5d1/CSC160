@@ -16,9 +16,9 @@ namespace WPF
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             //Panels panels = new Panels();
-            GlobalStuff.panels = new Panels();
-            GlobalStuff.panels.Title = "Loading Panels from App Startup";
-            GlobalStuff.panels.Show();
+            //GlobalStuff.panels = new Panels();
+            //GlobalStuff.panels.Title = "Loading Panels from App Startup";
+            //GlobalStuff.panels.Show();
         }
     }
 }

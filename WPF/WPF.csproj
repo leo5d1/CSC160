@@ -7,4 +7,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\button.png" />
+    <None Remove="Resources\happy.png" />
+    <None Remove="Resources\help.png" />
+    <None Remove="Resources\incorrect-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\button.png" />
+    <Resource Include="Resources\happy.png" />
+    <Resource Include="Resources\help.png" />
+    <Resource Include="Resources\incorrect-icon.png" />
+  </ItemGroup>
+
 </Project>
