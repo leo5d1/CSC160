@@ -22,6 +22,12 @@ namespace WPF
         public DataBinding()
         {
             InitializeComponent();
+            DataContext = this;
+        }
+private void btnUpdateSource_Click(object sender, RoutedEventArgs e)
+        {
+            BindingExpression be = txtTitle.GetBindingExpression(TextBox.TextProperty);
+            be.UpdateSource();
         }
     }
 }
