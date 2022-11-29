@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace WPF
 {
     /// <summary>
-    /// Interaction logic for Controls.xaml
+    /// Interaction logic for UControl.xaml
     /// </summary>
-    public partial class Controls : Window
+    public partial class UControl : Window
     {
-        public Controls()
+        public UControl()
         {
             InitializeComponent();
-        }
-
-        private void PanicButton_Click(object sender, RoutedEventArgs e)
-        {
-            txtInfoText.Text = "Panic!!!!";
-            PanicButton.Content = "Help!";
-
-            img.Source = new BitmapImage(new Uri("Resources/incorrect-icon.png", UriKind.Relative));
         }
     }
 }

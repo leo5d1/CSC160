@@ -15,10 +15,11 @@ namespace WPF
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            //Panels panels = new Panels();
-            //GlobalStuff.panels = new Panels();
-            //GlobalStuff.panels.Title = "Loading Panels from App Startup";
-            //GlobalStuff.panels.Show();
+            //Panels frmPanels = new Panels();
+            //GlobalStuff.gPanelsWindow = new Panels();
+            //GlobalStuff.gPanelsWindow.Title = "Panels Form";
+            //GlobalStuff.gPanelsWindow.Show();
+
         }
     }
 }

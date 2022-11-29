@@ -10,26 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF
+namespace DNDApp
 {
     /// <summary>
-    /// Interaction logic for Controls.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Controls : Window
+    public partial class MainWindow : Window
     {
-        public Controls()
+        public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void PanicButton_Click(object sender, RoutedEventArgs e)
-        {
-            txtInfoText.Text = "Panic!!!!";
-            PanicButton.Content = "Help!";
-
-            img.Source = new BitmapImage(new Uri("Resources/incorrect-icon.png", UriKind.Relative));
         }
     }
 }

@@ -21,9 +21,9 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Label Content="GRID" FontSize="32" HorizontalAlignment="Center"
+                <Label Content="GRID" FontSize="32" HorizontalAlignment="Center" 
                        VerticalAlignment="Center" />
-                <WrapPanel Grid.Column="1" Orientation="Horizontal">
+                <WrapPanel Grid.Column="1" Orientation="Vertical">
                     <Button Width="60" Height="30" Margin="10">Button 1</Button>
                     <Button Width="60" Height="30" Margin="10">Button 2</Button>
                     <Button Width="60" Height="30" Margin="10">Button 3</Button>
@@ -34,9 +34,9 @@
                 </WrapPanel>
                 <StackPanel Grid.Column="2" Orientation="Vertical">
                     <Button Margin="5">Button 1</Button>
-                    <Button Margin="5">Button 2</Button>
-                    <Button Margin="5">Button 3</Button>
-                    <Button Margin="5">Button 4</Button>
+                    <Button Margin="5" Content="Button 2" />
+                    <Button Margin="5" Content="Button 3" />
+                    <Button Margin="5" Content="Button 4" />
                 </StackPanel>
                 <DockPanel Grid.Row="1">
                     <Button Margin="5" DockPanel.Dock="Top" Content="Button 1" />
@@ -46,15 +46,16 @@
                 </DockPanel>
                 <Canvas Grid.Row="2">
                     <Ellipse Panel.ZIndex="2" Fill="Gainsboro" Canvas.Left="25"
-                             Canvas.Top="25" Width="200" Height="200" />
-                    <Rectangle Panel.ZIndex="3" Fill="LightBlue" Canvas.Left="25"
+                             Canvas.Top="25" Width="250" Height="200" />
+                    <Rectangle Panel.ZIndex="3" Fill="LightBlue" Canvas.Left="25" 
                                Canvas.Top="25" Width="50" Height="50" />
-                    <Rectangle Panel.ZIndex="4" Fill="LightCoral" Canvas.Left="50"
+                    <Rectangle Panel.ZIndex="4" Fill="LightCoral" Canvas.Left="50" 
                                Canvas.Top="50" Width="50" Height="50" />
-                    <Rectangle Panel.ZIndex="5" Fill="LightCyan" Canvas.Left="75"
+                    <Rectangle Panel.ZIndex="5" Fill="LightCyan" Canvas.Left="75" 
                                Canvas.Top="75" Width="50" Height="50" />
                 </Canvas>
             </Grid>
+            
         </Border>
     </DockPanel>
 </Window>

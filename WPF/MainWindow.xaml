@@ -10,8 +10,9 @@
         Background="Aqua">
     <Grid>
         <Grid.ColumnDefinitions>
-            <!-- comments -->
             <ColumnDefinition Width="*" />
+            <!-- * = size proportional to grid 
+              auto = size to content   -->
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -19,21 +20,20 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>  
         
-        <Button x:Name="btnDoIt" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="80" VerticalAlignment="Center" Click="btnDoIt_Click">
+        <Button x:Name="btnDoIt" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="200" Height="80"  VerticalAlignment="Top" Click="btnDoIt_Click" >
             <StackPanel Orientation="Horizontal">
                 <Label Content="Volume" />
-                <Slider Name="myslider"  Width="80" VerticalAlignment="Center" />
+                <Slider Name="myslider" Width="80" VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-
-        <ComboBox Name ="cboFavFood" Height="30" Grid.Row="0" Grid.Column="0" SelectionChanged="cboFavFood_SelectionChanged">
+        <ComboBox x:Name="cboFavFood" Height="30" Grid.Row="0" Grid.Column="0" SelectionChanged="cboFavFood_SelectionChanged">
             <ComboBoxItem Content="Pizza" />
             <ComboBoxItem Content="Tacos" />
             <ComboBoxItem Content="Ice Cream" />
             <ComboBoxItem Content="Sushi" />
-        </ComboBox>
+        </ComboBox> 
 
     </Grid>
 </Window>

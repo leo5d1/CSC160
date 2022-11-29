@@ -27,7 +27,7 @@ namespace WPF
 
         private void btnDoIt_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(sender.ToString());
+            //MessageBox.Show(sender.ToString());
         }
 
         private void cboFavFood_SelectionChanged(object sender, SelectionChangedEventArgs e)

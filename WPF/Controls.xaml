@@ -24,31 +24,33 @@
                 <StackPanel>
                     <TextBlock Text="Hello World" FontSize="16" />
                     <TextBlock FontSize="16">
-                        This is a <Bold>bold line</Bold>
+                        This is a <Bold>bold line</Bold> of 
                         <Span Foreground="Blue">colorful</Span> text
                     </TextBlock>
                     <TextBlock FontSize="20" TextTrimming="CharacterEllipsis">
-                        Here is a long line of text. Character Ellipsis
+                        Here is a long line of text.  Character Ellipsis
                     </TextBlock>
                     <TextBlock FontSize="20" TextTrimming="WordEllipsis">
-                        Here is a long line of text. Word Ellipsis
+                        Here is a long line of text.  Word Ellipsis
                     </TextBlock>
                 </StackPanel>
                 <Label Grid.Column="1" HorizontalAlignment="Center" Margin="20">
                     <StackPanel Orientation="Horizontal">
-                        <Image Name="img" Source="Resources/happy.png" Width="30" />
+                        <Image Name="img" Source="Resources\happy.png" Width="30" />
                         <Label Content="Have a nice day!" />
                     </StackPanel>
+                    
                 </Label>
                 <TextBox Name="txtInfoText" Grid.Column="2"
-                           VerticalAlignment="Center"
-                           AcceptsReturn="True"
-                           SpellCheck.IsEnabled="True" />
+                         VerticalAlignment="Center"
+                         AcceptsReturn="True"
+                         SpellCheck.IsEnabled="True" />
                 <Button Name="PanicButton" Grid.Row="1" VerticalAlignment="Center"
-                        Click="PanicButton_Click" >
+                      Click="PanicButton_Click"  >
                     Don't Panic!
                 </Button>
-                <!-- <Button Name="PanicButton2" Click="PanicButton_Click"/> -->
+                <Button Name="PanicButton2" Click="PanicButton_Click" />
+
             </Grid>
         </Border>
     </DockPanel>

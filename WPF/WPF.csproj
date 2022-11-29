@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\button.png" />
     <Resource Include="Resources\happy.png" />
     <Resource Include="Resources\help.png" />

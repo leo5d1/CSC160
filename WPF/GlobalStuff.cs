@@ -8,6 +8,6 @@ namespace WPF
 {
     internal class GlobalStuff
     {
-        public static Panels panels;
+        public static Panels gPanelsWindow;
     }
 }

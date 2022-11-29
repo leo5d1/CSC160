@@ -15,21 +15,22 @@ using System.Windows.Shapes;
 namespace WPF
 {
     /// <summary>
-    /// Interaction logic for Controls.xaml
+    /// Interaction logic for ClassBinding.xaml
     /// </summary>
-    public partial class Controls : Window
+    public partial class ClassBinding : Window
     {
-        public Controls()
+        private Person p;
+
+        public ClassBinding()
         {
             InitializeComponent();
+            p = new Person();
+            this.DataContext = p;
         }
 
-        private void PanicButton_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            txtInfoText.Text = "Panic!!!!";
-            PanicButton.Content = "Help!";
-
-            img.Source = new BitmapImage(new Uri("Resources/incorrect-icon.png", UriKind.Relative));
+            p.Randomize();
         }
     }
 }
