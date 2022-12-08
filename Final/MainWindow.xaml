@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Final"
         mc:Ignorable="d"
-        Title="Watchlist" Height="450" Width="520">
+        Title="Watchlist" Height="530" Width="520">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -18,17 +18,18 @@
 
             <!-- Add -->
             <Label Content="Add" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
-            <TextBlock Text="Name:" FontWeight="Bold"/>
-            <TextBox x:Name="txtName" />
-
-            <TextBlock Text="Type (Show or Movie):" FontWeight="Bold"/>
-            <TextBox x:Name="txtType" />
             
-            <TextBlock Text="Length (Episodes or Hours):" FontWeight="Bold"/>
-            <TextBox x:Name="txtLength" />
+            <TextBlock Text="Name:" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtName" Margin="5 0"/>
 
-            <TextBlock Text="Amount Watched:" FontWeight="Bold"/>
-            <TextBox x:Name="txtAmountWatched" />
+            <TextBlock Text="Type (Show or Movie):" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtType" Margin="5 0"/>
+
+            <TextBlock Text="Length (Episodes or Hours):" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtLength" Margin="5 0"/>
+
+            <TextBlock Text="Amount Watched:" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtAmountWatched" Margin="5 0"/>
 
             <Button x:Name="AddButton"
                         Margin="10 10"
@@ -39,19 +40,32 @@
             <Separator/>
             
             <!-- Search -->
-            <Label Content="Search" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
-            
-            <TextBlock Text="Name:" FontWeight="Bold"/>
-            <TextBox x:Name="txtSName" />
+            <Label Content="Search and Update" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
 
-            <TextBlock Text="Type (Show or Movie):" FontWeight="Bold"/>
-            <TextBox x:Name="txtSType" />
-            
+            <TextBlock Text="Name:" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtSName" Margin="5 0"/>
+
+            <TextBlock Text="Type (Show or Movie):" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtSType" Margin="5 0"/>
+
+            <TextBlock Text="Length (Episodes or Hours):" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtSLength" Margin="5 0"/>
+
+            <TextBlock Text="Amount Watched:" FontWeight="Bold" Margin="5 0"/>
+            <TextBox x:Name="txtSAmountWatched" Margin="5 0"/>
+
             <Button x:Name="SearchButton"
-                        Margin="10 10"
-                        Padding="10 0"
-                        Content="Search"
-                        Click="SearchButton_Click"/>
+                Margin="10 10"
+                Padding="10 0"
+                Content="Search"
+                Click="SearchButton_Click"/>
+
+            <Button x:Name="UpdateButton"
+                Margin="10 0"
+                Padding="10 0"
+                Content="Update"
+                Click="UpdateButton_Click"/>
+
         </StackPanel>
 
         <DataGrid x:Name="dg" Grid.Column="1"/>

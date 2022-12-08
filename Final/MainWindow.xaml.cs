@@ -83,6 +83,54 @@ namespace Final
 
             txtSName.Text = "";
             txtSType.Text = "";
+            txtSLength.Text = "";
+            txtSAmountWatched.Text = "";
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dt;
+            Hashtable ht = new Hashtable();
+            string sql;
+
+            ht.Clear();
+
+            ht.Clear();
+
+            ht.Add("@Name", txtSName.Text);
+            ht.Add("@Type", txtSType.Text);
+            ht.Add("@Length", txtSLength.Text);
+            ht.Add("@AmountWatched", txtSAmountWatched.Text);
+
+            if(txtSLength.Text != "" && txtSAmountWatched.Text != "")
+            {
+                sql = "Update Watchlist set Length=@Length, AmountWatched=@AmountWatched where Name=@Name or Type=@Type";
+
+                dt = ExDB.GetDataTable("CSC160", ht, sql);
+            }
+            else if (txtSLength.Text != "")
+            {
+                sql = "Update Watchlist set Length=@Length where Name=@Name or Type=@Type";
+
+                dt = ExDB.GetDataTable("CSC160", ht, sql);
+            }
+            else if (txtSAmountWatched.Text != "")
+            {
+                sql = "Update Watchlist set AmountWatched=@AmountWatched where Name=@Name or Type=@Type";
+
+                dt = ExDB.GetDataTable("CSC160", ht, sql);
+            }
+            else
+            {
+                SearchButton_Click(sender, e);
+            }
+
+            txtSName.Text = "";
+            txtSType.Text = "";
+            txtSLength.Text = "";
+            txtSAmountWatched.Text = "";
+
+            SearchButton_Click(sender, e);
         }
     }
 }
